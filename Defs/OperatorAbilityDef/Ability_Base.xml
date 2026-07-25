@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="PawnFlyerBase">
+		<defName>EF_Dash</defName>
+		<pawnFlyer>
+			<flightSpeed>500</flightSpeed>
+			<flightDurationMin>0.1</flightDurationMin>
+			<heightFactor>0</heightFactor>
+			<stunDurationTicksRange>0~0</stunDurationTicksRange>
+		</pawnFlyer>
+	</ThingDef>
+
+	<ThingDef ParentName="PawnFlyerBase">
+		<defName>EF_Jump</defName>
+		<pawnFlyer>
+			<flightSpeed>200</flightSpeed>
+			<flightDurationMin>0.5</flightDurationMin>
+			<heightFactor>1.5</heightFactor>
+			<stunDurationTicksRange>0~0</stunDurationTicksRange>
+		</pawnFlyer>
+	</ThingDef>
+
+	<!-- Endfield 专用 operatorID（容器技能） -->
+	<AbilityDef>
+		<defName>EF_VAbility_Operator</defName>
+		<abilityClass>AK_DLL.VAbility_Operator</abilityClass>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<!--<label>干员协议</label> -->
+		<label>operator protocol</label>
+		<!--<description>终末地干员协议。</description> -->
+		<description>Endfield operator protocol.</description>
+		<iconPath>UI/Element/Endfield</iconPath>
+		<verbProperties> <!-- 没用，但没有好像会报错 -->
+			<verbClass>Verb_CastPsycast</verbClass>
+			<range>24.9</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<canTargetBuildings>False</canTargetBuildings>
+				<canTargetAnimals>False</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+</Defs>

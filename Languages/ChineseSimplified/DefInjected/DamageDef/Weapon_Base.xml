@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: magic bullet -->
+  <EF_Projectile_Magic.label>法术弹</EF_Projectile_Magic.label>
+  <!-- EN: {0} was killed by magic. -->
+  <EF_Projectile_Magic.deathMessage>{0} 被法术杀死了。</EF_Projectile_Magic.deathMessage>
+</LanguageData>

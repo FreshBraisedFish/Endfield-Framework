@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ============================================================
+		 [BF] - Endfield 武器基类定义
+		 简化版：仅保留 Melee / Ranged 两大类 + 基础投射物/伤害/声音
+		 ============================================================ -->
+
+	<!-- ========== 伤害类型 ========== -->
+
+	<DamageDef>
+		<defName>EF_Projectile_Magic</defName>
+		<!--<label>法术弹</label> -->
+		<label>magic bullet</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<!--<deathMessage>{0} 被法术杀死了。</deathMessage> -->
+		<deathMessage>{0} was killed by magic.</deathMessage>
+		<hediff>EF_Injury_MagicShot</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Bullet</impactSoundType>
+		<isRanged>true</isRanged>
+		<makesAnimalsFlee>true</makesAnimalsFlee>
+	</DamageDef>
+
+	<HediffDef ParentName="InjuryBase">
+		<defName>EF_Injury_MagicShot</defName>
+		<!--<label>法术射弹</label> -->
+		<label>magic shot</label>
+		<!-- <labelNoun>法术射击造成的伤口.</labelNoun>-->
+		<labelNoun>wounds caused by magical shots.</labelNoun>
+		<description>a wound caused by magical shots.</description>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<labelTendedWell>bandaged</labelTendedWell>
+				<labelTendedWellInner>stitched</labelTendedWellInner>
+				<labelSolidTendedWell>treated</labelSolidTendedWell>
+			</li>
+			<li Class="HediffCompProperties_Infecter">
+				<infectionChance>0.05</infectionChance>
+			</li>
+			<li Class="HediffCompProperties_GetsPermanent">
+				<permanentLabel>old magic wound</permanentLabel>
+				<instantlyPermanentLabel>permanent magic wound</instantlyPermanentLabel>
+			</li>
+		</comps>
+		<injuryProps>
+			<painPerSeverity>0.015</painPerSeverity>
+			<averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+			<bleedRate>0.00</bleedRate>
+			<canMerge>true</canMerge>
+			<destroyedLabel>shot off</destroyedLabel>
+			<destroyedOutLabel>shot off</destroyedOutLabel>
+		</injuryProps>
+	</HediffDef>
+
+	<!-- ========== 通用武器基底 ========== -->
+
+	<ThingDef Name="EF_WeaponBase" Abstract="True">
+		<description>The operator's usual weapon.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>true</alwaysHaulable>
+		<tickerType>Normal</tickerType>
+		<equipmentType>Primary</equipmentType>
+		<useHitPoints>false</useHitPoints>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<smeltable>false</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<relicChance>0</relicChance>
+		<tradeability>None</tradeability>
+		<statBases>
+			<Flammability>0</Flammability>
+			<Beauty>15</Beauty>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable" />
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li Class="CompProperties_Styleable" />
+			<li Class="CompProperties_Biocodable" />
+		</comps>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+			<texPath>Things/AK_Agents/Weapon/Guard/LapplandW</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Industrial</techLevel>
+		<verbs Inherit="false" />
+		<tools Inherit="false">
+			<li>
+				<!-- <label>基础打击</label>-->
+				<label>strike</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>21</power>
+				<cooldownTime>1.4</cooldownTime>
+				<chanceFactor>0.0001</chanceFactor>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<!-- ========== 近战武器基底 ========== -->
+
+	<ThingDef Name="EF_WeaponBase_Melee" ParentName="EF_WeaponBase" Abstract="True">
+		<weaponClasses>
+			<li>Melee</li>
+		</weaponClasses>
+		<uiIconScale>1.25</uiIconScale>
+		<statBases>
+			<Mass>1.1</Mass>
+		</statBases>
+		<equippedAngleOffset>-25</equippedAngleOffset>
+	</ThingDef>
+
+	<!-- ========== 远程武器基底 ========== -->
+
+	<ThingDef Name="EF_WeaponBase_Ranged" ParentName="EF_WeaponBase" Abstract="True">
+		<weaponClasses>
+			<li>Ranged</li>
+		</weaponClasses>
+		<uiIconScale>1.25</uiIconScale>
+		<statBases>
+			<Mass>1.1</Mass>
+		</statBases>
+	</ThingDef>
+
+	<!-- ========== 法术武器基底（继承远程） ========== -->
+
+	<ThingDef Name="EF_WeaponBase_Magic" ParentName="EF_WeaponBase_Ranged" Abstract="True">
+	</ThingDef>
+
+	<!-- ========== 投射物基底 ========== -->
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>EF_Bullet_Base</defName>
+		<!-- <label>子弹射击</label>-->
+		<label>bullet shot</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+			<speed>70</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>EF_MagicBullet_Base</defName>
+		<!-- <label>法术射击</label>-->
+		<label>magic shot</label>
+		<graphicData>
+			<texPath>Things/Projectile/MagicOrb</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>EF_Projectile_Magic</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+			<speed>70</speed>
+		</projectile>
+	</ThingDef>
+
+	<!-- ========== 基础声音 ========== -->
+
+	<SoundDef Name="EF_SoundBase" Abstract="True">
+		<defName>EF_SoundBase</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>3</maxSimultaneous>
+		<sustain>False</sustain>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Weapon/ChargeRifle</clipPath>
+					</li>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+</Defs>

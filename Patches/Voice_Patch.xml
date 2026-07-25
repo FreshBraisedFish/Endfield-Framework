@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+
+			<!-- 创建一个空音效 SoundDef，用于静音 select -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<SoundDef>
+						<defName>AK_Voice_Select_Silent</defName>
+						<context>MapOnly</context>
+						<maxSimultaneous>1</maxSimultaneous>
+						<subSounds />
+					</SoundDef>
+				</value>
+			</li>
+
+			<!-- 替换框架默认的 select 音为空音效 -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/SoundDef[defName="AK_Voice_Select_Default"]/subSounds/li</xpath>
+				<value>
+					<li Class="SubSoundDef">
+						<def>AK_Voice_Select_Silent</def>
+						<volumeRange>0~0</volumeRange>
+					</li>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

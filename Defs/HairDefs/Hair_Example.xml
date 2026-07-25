@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ============================================================
+		 发型基底（分男女）
+		 - EF_HairBaseF: 女性干员发型基底
+		 - EF_HairBaseM: 男性干员发型基底
+		 
+		 具体发型继承自基底，填写：
+		   defName  — 唯一标识
+		   label    — 显示名称
+		   texPath  — 贴图路径（相对于 Textures/）
+		 ============================================================ -->
+
+	<HairDef Name="EF_HairBaseF" Abstract="True">
+		<hairGender>Female</hairGender>
+		<category>EF_Agents</category>
+	</HairDef>
+
+	<HairDef Name="EF_HairBaseM" Abstract="True">
+		<hairGender>Male</hairGender>
+		<category>EF_Agents</category>
+	</HairDef>
+</Defs>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- ============================================================
+		 语音定义模板
+
+		 语音系统分为两层：
+		 1. SoundDef — 具体的一段音频（对应一个 .wav/.ogg 文件）
+		 2. VoicePackDef — 将多个 SoundDef 组合成一个干员的语音包
+		 
+		 自定义干员语音：
+		   SoundDef 中 clipPath 相对于 Sounds/ 文件夹
+		   VoicePackDef 引用对应干员的 SoundDef defName
+		   OperatorDef 中通过 <voicePackDef> 引用 VoicePackDef
+		 ============================================================ -->
+
+	<!-- ========== 声音基底 ========== -->
+
+	<SoundDef Name="EF_VoiceBase" Abstract="True">
+		<defName>EF_VoiceBase</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+	</SoundDef>
+
+</Defs>

@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ============================================================
+		 [BF] - Endfield 物品分类定义
+		 为终末地干员提供武器、衣着、建筑等 ThingCategoryDef
+		 ============================================================ -->
+
+	<!-- 武器总类 -->
+	<ThingCategoryDef>
+		<defName>EF_Weapon</defName>
+		<!-- <label>终末地系列武器</label>-->
+		<label>Endfield weapons</label>
+		<parent>Weapons</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Weapon_Guard</defName>
+		<!--<label>近卫武器</label> -->
+		<label>guard weapons</label>
+		<parent>EF_Weapon</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Weapon_Defender</defName>
+		<!--<label>重装武器</label> -->
+		<label>defender weapons</label>
+		<parent>EF_Weapon</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Weapon_Supporter</defName>
+		<!--<label>辅助武器</label> -->
+		<label>supporter weapons</label>
+		<parent>EF_Weapon</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Weapon_Vanguard</defName>
+		<!--<label>先锋武器</label> -->
+		<label>vanguard weapons</label>
+		<parent>EF_Weapon</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Weapon_Striker</defName>
+		<!--<label>突击武器</label> -->
+		<label>striker weapons</label>
+		<parent>EF_Weapon</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Weapon_Caster</defName>
+		<!--<label>术士武器</label> -->
+		<label>caster weapons</label>
+		<parent>EF_Weapon</parent>
+	</ThingCategoryDef>
+
+	<!-- 衣着总类 -->
+	<ThingCategoryDef>
+		<defName>EF_Apparel</defName>
+		<!--<label>终末地系列衣着</label> -->
+		<label>Endfield apparels</label>
+		<parent>Apparel</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Apparel_Guard</defName>
+		<!--<label>近卫衣着</label> -->
+		<label>guard apparels</label>
+		<parent>EF_Apparel</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Apparel_Defender</defName>
+		<!--<label>重装衣着</label> -->
+		<label>defender apparels</label>
+		<parent>EF_Apparel</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Apparel_Supporter</defName>
+		<!--<label>辅助衣着</label> -->
+		<label>supporter apparels</label>
+		<parent>EF_Apparel</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Apparel_Vanguard</defName>
+		<!--<label>先锋衣着</label> -->
+		<label>vanguard apparels</label>
+		<parent>EF_Apparel</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Apparel_Striker</defName>
+		<!--<label>突击衣着</label> -->
+		<label>striker apparels</label>
+		<parent>EF_Apparel</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Apparel_Caster</defName>
+		<!--<label>术士衣着</label> -->
+		<label>caster apparels</label>
+		<parent>Apparel</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Headgear</defName>
+		<!--<label>终末地系列头饰</label> -->
+		<label>Endfield headgear</label>
+		<parent>EF_Apparel</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Headgear_Guard</defName>
+		<!--<label>近卫头饰</label> -->
+		<label>guard headgear</label>
+		<parent>EF_Headgear</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Headgear_Defender</defName>
+		<!--<label>重装头饰</label> -->
+		<label>defender headgear</label>
+		<parent>EF_Headgear</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Headgear_Supporter</defName>
+		<!--<label>辅助头饰</label> -->
+		<label>supporter headgear</label>
+		<parent>EF_Headgear</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Headgear_Vanguard</defName>
+		<!--<label>先锋头饰</label> -->
+		<label>vanguard headgear</label>
+		<parent>EF_Headgear</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Headgear_Striker</defName>
+		<!--<label>突击头饰</label> -->
+		<label>striker headgear</label>
+		<parent>EF_Headgear</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Headgear_Caster</defName>
+		<!--<label>术士头饰</label> -->
+		<label>caster headgear</label>
+		<parent>EF_Headgear</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>EF_Apparel_Accessory</defName>
+		<!--<label>饰品</label> -->
+		<label>accessory</label>
+		<parent>EF_Apparel</parent>
+	</ThingCategoryDef>
+
+	<!-- 建筑 -->
+	<ThingCategoryDef>
+		<defName>EF_Building</defName>
+		<!--<label>终末地建筑</label> -->
+		<label>Endfield buildings</label>
+		<parent>Buildings</parent>
+	</ThingCategoryDef>
+
+	<!-- 杂项 -->
+	<ThingCategoryDef>
+		<defName>EF_Item</defName>
+		<!--<label>终末地杂项物品</label> -->
+		<label>Endfield items</label>
+		<parent>Items</parent>
+	</ThingCategoryDef>
+
+	<StyleItemCategoryDef>
+		<defName>EF_Agents</defName>
+		<!--<label>终末地</label> -->
+		<label>Endfield</label>
+	</StyleItemCategoryDef>
+
+</Defs>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ============================================================
+		 [BF] - Endfield 职业特质定义
+		 每个职业对应一个 TraitDef，为干员提供基础属性修正和技能加点。
+		 继承自框架的 AK_RecruitBase_XXX 时，OperatorDef 中通过
+		 <traits><li><def>EF_Trait_Agent_XXX</def></li></traits> 引用。
+		 ============================================================ -->
+
+	<!-- 近卫 - Guard -->
+	<TraitDef>
+		<defName>EF_Trait_Agent_Guard</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0.0</commonality>
+		<degreeDatas>
+			<li>
+				<label>Guard</label>
+				<description>{PAWN_nameDef} is skilled at making enemies Vulnerable and applying Physical Statuses. {PAWN_pronoun} is also good damage dealers.</description>
+				<statOffsets>
+					<MeleeDodgeChance>9</MeleeDodgeChance>
+					<MoveSpeed>0.25</MoveSpeed>
+				</statOffsets>
+				<statFactors>
+					<MeleeDamageFactor>1.3</MeleeDamageFactor>
+				</statFactors>
+				<skillGains>
+					<Melee>4</Melee>
+				</skillGains>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<!-- 重装 - Defender -->
+	<TraitDef>
+		<defName>EF_Trait_Agent_Defender</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0.0</commonality>
+		<degreeDatas>
+			<li>
+				<label>Defender</label>
+				<description>{PAWN_nameDef} is extremely tough. {PAWN_pronoun} is skilled in protecting and treating {PAWN_possessive} teammates, as well as counterattacking the enemy.</description>
+				<statOffsets>
+					<MeleeDodgeChance>4</MeleeDodgeChance>
+				</statOffsets>
+				<statFactors>
+					<IncomingDamageFactor>0.4</IncomingDamageFactor>
+				</statFactors>
+				<skillGains>
+					<Melee>2</Melee>
+				</skillGains>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<!-- 辅助 - Supporter -->
+	<TraitDef>
+		<defName>EF_Trait_Agent_Supporter</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0.0</commonality>
+		<degreeDatas>
+			<li>
+				<label>Supporter</label>
+				<description>{PAWN_nameDef} is skilled at applying various control effects that weaken the enemy. {PAWN_pronoun} can also buff and support their teammates.</description>
+				<statOffsets>
+					<AimingDelayFactor>-0.15</AimingDelayFactor>
+					<MoveSpeed>0.75</MoveSpeed>
+					<CarryingCapacity>10</CarryingCapacity>
+					<MeleeDodgeChance>9</MeleeDodgeChance>
+				</statOffsets>
+				<skillGains>
+					<Shooting>2</Shooting>
+				</skillGains>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<!-- 先锋 - Vanguard -->
+	<TraitDef>
+		<defName>EF_Trait_Agent_Vanguard</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0.0</commonality>
+		<degreeDatas>
+			<li>
+				<label>Vanguard</label>
+				<description>{PAWN_nameDef} is great at recovering SP to help {PAWN_possessive} teammates' skill casting.</description>
+				<statOffsets>
+					<MeleeDodgeChance>10</MeleeDodgeChance>
+				</statOffsets>
+				<statFactors>
+					<AK_Stat_MoveSpeedFactor>1.2</AK_Stat_MoveSpeedFactor>
+				</statFactors>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<!-- 突击 - Striker -->
+	<TraitDef>
+		<defName>EF_Trait_Agent_Striker</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0.0</commonality>
+		<degreeDatas>
+			<li>
+				<label>Striker</label>
+				<description>{PAWN_nameDef} exploits Physical or Arts effects inflicted by other operators to deal decisive damage.</description>
+				<statOffsets>
+					<MoveSpeed>0.5</MoveSpeed>
+					<MeleeDodgeChance>9</MeleeDodgeChance>
+				</statOffsets>
+				<statFactors>
+					<MeleeDamageFactor>1.15</MeleeDamageFactor>
+					<AKA_Stat_RangedDamageFactor>1.15</AKA_Stat_RangedDamageFactor>
+				</statFactors>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<!-- 术士 - Caster -->
+	<TraitDef>
+		<defName>EF_Trait_Agent_Caster</defName>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<commonality>0.0</commonality>
+		<degreeDatas>
+			<li>
+				<label>Caster</label>
+				<description>{PAWN_nameDef} is skilled at applying Arts Inflictions and Arts Reactions. {PAWN_pronoun} is also good damage dealers.</description>
+				<statOffsets>
+					<AimingDelayFactor>-0.20</AimingDelayFactor>
+					<MoveSpeed>0.25</MoveSpeed>
+					<MeleeDodgeChance>9</MeleeDodgeChance>
+				</statOffsets>
+				<statFactors>
+					<AKA_Stat_RangedDamageFactor>1.3</AKA_Stat_RangedDamageFactor>
+				</statFactors>
+				<skillGains>
+					<Shooting>4</Shooting>
+				</skillGains>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+</Defs>

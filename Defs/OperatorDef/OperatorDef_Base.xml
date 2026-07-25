@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ============================================================
+		 [BF] - Endfield 干员基底定义
+		 每个职业一个抽象 OperatorDef，继承自框架的 AK_RecruitBase，
+		 绑定职业特质(EF_Trait_Agent_XXX)和职业类型(EF_OperatorClass_XXX)。
+		 
+		 最终的具体干员继承这些基底，放在 Defs/OperatorDef/ 下。
+	============================================================ -->
+
+	
+
+	<AK_DLL.OperatorDef ParentName="AK_RecruitBase" Name="EF_RecruitBase" Abstract="True">
+	<operatorID>EF_VAbility_Operator</operatorID>
+	<renderTreeOverride></renderTreeOverride>
+	</AK_DLL.OperatorDef>
+
+	<!-- 近卫 -->
+	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Guard" Abstract="True">
+		<traits>
+			<li>
+				<def>EF_Trait_Agent_Guard</def>
+			</li>
+		</traits>
+		<operatorType>EF_OperatorClass_Guard</operatorType>
+	</AK_DLL.OperatorDef>
+
+	<!-- 重装 -->
+	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Defender" Abstract="True">
+		<traits>
+			<li>
+				<def>EF_Trait_Agent_Defender</def>
+			</li>
+		</traits>
+		<operatorType>EF_OperatorClass_Defender</operatorType>
+	</AK_DLL.OperatorDef>
+
+	<!-- 辅助 -->
+	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Supporter" Abstract="True">
+		<traits>
+			<li>
+				<def>EF_Trait_Agent_Supporter</def>
+			</li>
+		</traits>
+		<operatorType>EF_OperatorClass_Supporter</operatorType>
+	</AK_DLL.OperatorDef>
+
+	<!-- 先锋 -->
+	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Vanguard" Abstract="True">
+		<traits>
+			<li>
+				<def>EF_Trait_Agent_Vanguard</def>
+			</li>
+		</traits>
+		<operatorType>EF_OperatorClass_Vanguard</operatorType>
+	</AK_DLL.OperatorDef>
+
+	<!-- 突击 -->
+	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Striker" Abstract="True">
+		<traits>
+			<li>
+				<def>EF_Trait_Agent_Striker</def>
+			</li>
+		</traits>
+		<operatorType>EF_OperatorClass_Striker</operatorType>
+	</AK_DLL.OperatorDef>
+
+	<!-- 术士 -->
+	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Caster" Abstract="True">
+		<traits>
+			<li>
+				<def>EF_Trait_Agent_Caster</def>
+			</li>
+		</traits>
+		<operatorType>EF_OperatorClass_Caster</operatorType>
+	</AK_DLL.OperatorDef>
+
+</Defs>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Endfield basic apparel -->
+  <EF_ArmorBase.label>终末地基础装束</EF_ArmorBase.label>
+  <!-- EN: The uniform that the operator usually wear most frequently. -->
+  <EF_ArmorBase.description>干员平时最常穿着的服装。</EF_ArmorBase.description>
+  <!-- EN: Endfield basic headgear -->
+  <EF_HeadgearBase.label>终末地基础头饰</EF_HeadgearBase.label>
+  <!-- EN: The headgear that the operator usually wear most frequently. -->
+  <EF_HeadgearBase.description>干员平时最常佩戴的头饰。</EF_HeadgearBase.description>
+</LanguageData>
