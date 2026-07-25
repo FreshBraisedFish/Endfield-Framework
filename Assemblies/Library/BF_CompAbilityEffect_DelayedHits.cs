@@ -61,6 +61,7 @@ namespace BF_Library
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
+            base.Apply(target, dest);
             Debug.Log($"[BF_DelayedHits] Apply called: target={target}, delayTicks={Props.delayTicks}, hitCount={Props.hitCount}");
             pendingTarget = target;
             ticksLeft = Props.delayTicks;
