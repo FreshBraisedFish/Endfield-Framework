@@ -22,4 +22,12 @@
 		<maxSimultaneous>1</maxSimultaneous>
 	</SoundDef>
 
+	<!-- ========== 静音，占位用 ========== -->
+	<SoundDef>
+		<defName>EF_Sound_Silent</defName>
+		<context>MapOnly</context>
+		<subSounds>
+		</subSounds>
+	</SoundDef>
+
 </Defs>
