@@ -25,7 +25,7 @@
 	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Guard</defName>
 		<label>Guard</label>
-		<sortingOrder>1</sortingOrder>
+		<sortingOrder>500</sortingOrder>
 		<textureFolder>Guard</textureFolder>
 		<iconPath>UI/Element/Guard</iconPath>
 	</AK_DLL.OperatorClassDef>
@@ -34,7 +34,7 @@
 	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Defender</defName>
 		<label>Defender</label>
-		<sortingOrder>2</sortingOrder>
+		<sortingOrder>11</sortingOrder>
 		<textureFolder>Defender</textureFolder>
 		<iconPath>UI/Element/Defender</iconPath>
 	</AK_DLL.OperatorClassDef>
@@ -43,7 +43,7 @@
 	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Supporter</defName>
 		<label>Supporter</label>
-		<sortingOrder>5</sortingOrder>
+		<sortingOrder>12</sortingOrder>
 		<textureFolder>Supporter</textureFolder>
 		<iconPath>UI/Element/Supporter</iconPath>
 	</AK_DLL.OperatorClassDef>
@@ -52,7 +52,7 @@
 	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Vanguard</defName>
 		<label>Vanguard</label>
-		<sortingOrder>6</sortingOrder>
+		<sortingOrder>13</sortingOrder>
 		<textureFolder>Vanguard</textureFolder>
 		<iconPath>UI/Element/Vanguard</iconPath>
 	</AK_DLL.OperatorClassDef>
@@ -61,7 +61,7 @@
 	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Striker</defName>
 		<label>Striker</label>
-		<sortingOrder>7</sortingOrder>
+		<sortingOrder>14</sortingOrder>
 		<textureFolder>Striker</textureFolder>
 		<iconPath>UI/Element/Striker</iconPath>
 	</AK_DLL.OperatorClassDef>
@@ -70,7 +70,7 @@
 	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Caster</defName>
 		<label>Caster</label>
-		<sortingOrder>8</sortingOrder>
+		<sortingOrder>15</sortingOrder>
 		<textureFolder>Caster</textureFolder>
 		<iconPath>UI/Element/Caster</iconPath>
 	</AK_DLL.OperatorClassDef>

@@ -9,11 +9,44 @@
 		 最终的具体干员继承这些基底，放在 Defs/OperatorDef/ 下。
 	============================================================ -->
 
-	
-
-	<AK_DLL.OperatorDef ParentName="AK_RecruitBase" Name="EF_RecruitBase" Abstract="True">
-	<operatorID>EF_VAbility_Operator</operatorID>
-	<renderTreeOverride></renderTreeOverride>
+		<AK_DLL.OperatorDef Name="EF_RecruitBase" Abstract="True">
+		<surname>终末地</surname>
+		<description>拉电线哈哈</description>
+		<bodyTypeDef>Thin</bodyTypeDef>
+		<skinColor>(0.9804, 0.902, 0.8235, 1.0)</skinColor>
+		<hairColor>(1,1,1,1)</hairColor>
+		<childHood>AK_BackStory_Unknown_Child</childHood>
+		<age>16</age>
+		<headTypeDef>Female_AverageNormal</headTypeDef>
+		<standOffsets>
+			<li>
+				<key>0</key>
+				<value>(10,20,0.5)</value>
+			</li>
+			<li>
+				<key>1</key>
+				<value>(10,10,0.5)</value>
+			</li>
+			<li>
+				<key>2</key>
+				<value>(10,10,0.5)</value>
+			</li>
+			<li>
+				<key>3</key>
+				<value>(10,10,0.5)</value>
+			</li>
+			<li>
+				<key>4</key>
+				<value>(10,10,0.5)</value>
+			</li>
+			<li>
+				<key>5</key>
+				<value>(10,10,0.5)</value>
+			</li>
+		</standOffsets>
+		<xenoType>AK_BaseType</xenoType>
+		<operatorID>EF_VAbility_Operator</operatorID>
+		<renderTreeOverride>Humanlike</renderTreeOverride>
 	</AK_DLL.OperatorDef>
 
 	<!-- 近卫 -->

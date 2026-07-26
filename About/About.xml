@@ -25,13 +25,12 @@
 		<li>MIS.Framework</li>
 	</loadAfter>
 	<description>
-		明日方舟：终末地 干员框架
-		基于 [MIS] - Framework 的终末地风格干员包基底。
-		提供干员职业分类、物品分类、职业特质等模板。
-		在此框架下可定义终末地风格的干员角色。
+明日方舟：终末地 干员框架
+基于 [MIS] - Framework 的终末地风格干员包基底。
+提供干员职业分类、物品分类、职业特质等模板，以及能够做出炫酷效果的库（？）。在此框架下可定义终末地风格的干员角色。
 
-		Arknights: Endfield operator pack framework.
-		Based on [MIS] - Framework.
+Arknights: Endfield operator pack framework.
+Based on [MIS] - Framework.
 	</description>
 	<packageId>BraisedFish.Endfield</packageId>
 </ModMetaData>

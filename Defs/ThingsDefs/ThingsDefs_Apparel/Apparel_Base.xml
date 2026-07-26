@@ -72,7 +72,6 @@
 		<canLoadIntoCaravan>false</canLoadIntoCaravan>
 		<comps>
 			<li Class="CompProperties_Biocodable"/>
-			<li Class="AK_DLL.TCP_RemoveMe"/>
 			<li Class="SFLib.TCP_HideBody">
 				<hideBody>false</hideBody>
 				<hideHead>false</hideHead>
@@ -93,9 +92,9 @@
 		<useHitPoints>false</useHitPoints>
 		<techLevel>Undefined</techLevel>
 		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
+			<texPath>Things/Pawn/Humanlike/Apparel/CowboyHat/CowboyHat</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>1.50</drawSize>
+			<drawSize>(0.9,0.9)</drawSize>
 		</graphicData>
 		<statBases>
 			<Mass>1</Mass>
@@ -139,7 +138,6 @@
 		<canLoadIntoCaravan>false</canLoadIntoCaravan>
 		<comps>
 			<li Class="CompProperties_Biocodable"/>
-			<li Class="AK_DLL.TCP_RemoveMe"/>
 			<li Class="SFLib.TCP_HideBody">
 				<hideBody>false</hideBody>
 				<hideHead>false</hideHead>
