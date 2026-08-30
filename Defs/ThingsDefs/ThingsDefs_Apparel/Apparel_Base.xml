@@ -13,6 +13,7 @@
 
 	<ThingDef Name="EF_ArmorBase" ParentName="ApparelBase" Abstract="True">
 		<defName>EF_ArmorBase</defName>
+		<generateAllowChance>0</generateAllowChance>
 		<!-- <label>终末地基础装束</label>-->
 		<label>Endfield basic apparel</label>
 		<smeltable>false</smeltable>
@@ -45,7 +46,6 @@
 				<li>Neck</li>
 				<li>Shoulders</li>
 				<li>Arms</li>
-				<li>Legs</li>
 			</bodyPartGroups>
 			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</wornGraphicPath>
 			<layers>
@@ -84,6 +84,7 @@
 
 	<ThingDef Name="EF_HeadgearBase" ParentName="ApparelBase" Abstract="True">
 		<defName>EF_HeadgearBase</defName>
+		<generateAllowChance>0</generateAllowChance>
 		<!-- <label>终末地基础头饰</label>-->
 		<label>Endfield basic headgear</label>
 		<smeltable>false</smeltable>
