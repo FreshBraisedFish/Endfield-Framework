@@ -67,6 +67,13 @@ namespace BF_Library
             ticksLeft = Props.delayTicks;
             hitsRemaining = Props.hitCount;
             tickBetweenHits = Props.hitInterval;
+
+            if (Props.delayTicks <= 0)
+            {
+                FireHit();
+                hitsRemaining--;
+                ticksLeft = tickBetweenHits;
+            }
         }
 
         public override void CompTick()
@@ -94,14 +101,15 @@ namespace BF_Library
                 return;
             }
             Pawn pawn = parent.pawn;
-            if (!pawn.Spawned || !pendingTarget.IsValid)
+            Map map = pawn.MapHeld;
+            if (!pawn.SpawnedOrAnyParentSpawned || map == null || !pendingTarget.IsValid)
             {
-                Debug.LogWarning($"[BF_DelayedHits] FireHit skipped: pawn spawned={pawn.Spawned}, target valid={pendingTarget.IsValid}");
+                Debug.LogWarning($"[BF_DelayedHits] FireHit skipped: pawn spawned={pawn.SpawnedOrAnyParentSpawned}, target valid={pendingTarget.IsValid}");
                 return;
             }
 
             Vector3 basePos = Props.spawnPosition == ProjectileSpawnPosition.Caster
-                ? pawn.DrawPos
+                ? (pawn.Spawned ? pawn.DrawPos : pawn.PositionHeld.ToVector3Shifted())
                 : pendingTarget.Cell.ToVector3Shifted();
             Vector3 spawnPos = basePos + Props.spawnOffset;
             if (Props.spreadRadius > 0f)
@@ -111,14 +119,14 @@ namespace BF_Library
             }
             IntVec3 spawnCell = spawnPos.ToIntVec3();
 
-            if (!spawnCell.InBounds(pawn.Map))
+            if (!spawnCell.InBounds(map))
             {
                 Debug.LogWarning($"[BF_DelayedHits] FireHit skipped: spawn cell {spawnCell} out of bounds");
                 return;
             }
             Debug.Log($"[BF_DelayedHits] FireHit: projectile={projectileDef.defName}, spawn={Props.spawnPosition}({spawnCell}), target={pendingTarget}, remaining={hitsRemaining}");
             Projectile projectile = (Projectile)GenSpawn.Spawn(
-                projectileDef, spawnCell, pawn.Map);
+                projectileDef, spawnCell, map);
             projectile.Launch(
                 pawn, spawnPos,
                 pendingTarget, pendingTarget,

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -7,6 +8,9 @@ namespace BF_Library
     public class BF_CompProperties_RemoveAndDamage : CompProperties_AbilityEffect
     {
         public HediffDef hediffDef;
+        public HediffDef extraHediff_1;
+        public HediffDef extraHediff_2;
+        public HediffDef extraHediff_3;
         public DamageDef damageDef;
         public int baseDamage = 10;
         public float severityMultiplier = 1f;
@@ -16,6 +20,22 @@ namespace BF_Library
         public BF_CompProperties_RemoveAndDamage()
         {
             compClass = typeof(BF_CompAbilityEffect_RemoveAndDamage);
+        }
+
+        public override IEnumerable<string> ConfigErrors(AbilityDef parentDef)
+        {
+            foreach (string error in base.ConfigErrors(parentDef))
+            {
+                yield return error;
+            }
+            if (hediffDef == null && extraHediff_1 == null && extraHediff_2 == null && extraHediff_3 == null)
+            {
+                yield return "at least one detected hediffDef (hediffDef/extraHediff_1/2/3) must be set";
+            }
+            if (damageDef == null)
+            {
+                yield return "damageDef is null";
+            }
         }
     }
 
@@ -44,23 +64,26 @@ namespace BF_Library
                 return;
             }
 
-            Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(Props.hediffDef);
-            if (hediff == null)
+            List<Hediff> detected = BF_HediffUtility.GetDetectedHediffs(pawn, Props.hediffDef, Props.extraHediff_1, Props.extraHediff_2, Props.extraHediff_3);
+            if (detected.Count == 0)
             {
-                Debug.Log($"[BF_RemoveAndDamage] {pawn.LabelShort} has no hediff {Props.hediffDef.defName}, skipping");
+                Debug.Log($"[BF_RemoveAndDamage] {pawn.LabelShort} has none of the detected hediffs, skipping");
                 return;
             }
 
-            float severity = hediff.Severity;
-            pawn.health.RemoveHediff(hediff);
+            float totalSeverity = BF_HediffUtility.SumSeverity(detected);
+            for (int i = 0; i < detected.Count; i++)
+            {
+                pawn.health.RemoveHediff(detected[i]);
+            }
 
-            int totalDamage = Props.baseDamage + Mathf.RoundToInt(severity * Props.severityMultiplier);
+            int totalDamage = Props.baseDamage + Mathf.RoundToInt(totalSeverity * Props.severityMultiplier);
 
             DamageInfo dinfo = new DamageInfo(Props.damageDef, totalDamage, 0f, -1f, parent.pawn);
             dinfo.SetBodyRegion(BodyPartHeight.Undefined, BodyPartDepth.Outside);
             pawn.TakeDamage(dinfo);
 
-            Debug.Log($"[BF_RemoveAndDamage] Removed {Props.hediffDef.defName} (severity={severity:F2}) from {pawn.LabelShort}, dealt {totalDamage} {Props.damageDef.defName} damage");
+            Debug.Log($"[BF_RemoveAndDamage] Removed {detected.Count} hediff(s) (severity={totalSeverity:F2}) from {pawn.LabelShort}, dealt {totalDamage} {Props.damageDef.defName} damage");
         }
     }
 }

@@ -17,6 +17,8 @@ namespace BF_Library
         public SoundDef startSoundDef;
         public bool stunTargetDuringCharge;
         public int postChargeStunTicks;
+        public bool activateOnCast;
+        public int delayTicks;
     }
 
     public class BF_Verb_Charge : Verb_CastAbility
@@ -28,6 +30,10 @@ namespace BF_Library
         private ThingDef ChargeFlyer => ChargeProps?.chargeFlyerDef ?? ThingDefOf.PawnFlyer;
 
         public int PostChargeStunTicks => ChargeProps?.postChargeStunTicks ?? 0;
+
+        public bool ActivateOnCast => ChargeProps?.activateOnCast ?? false;
+
+        public int ChargeDelayTicks => ChargeProps?.delayTicks ?? 0;
 
         protected override bool TryCastShot()
         {
@@ -41,11 +47,39 @@ namespace BF_Library
                 Debug.Log($"[BF_Charge] Invalid destination, aborting charge");
                 return false;
             }
+            if (ActivateOnCast)
+            {
+                BF_CompAbilityEffect_ActivateOnLanding.TriggerCastPhase(ability, currentTarget, currentDestination);
+            }
             SpawnStartEffects();
 
-            if (ChargeProps?.stunTargetDuringCharge == true && currentTarget.Thing is Pawn targetPawn)
+            if (ChargeDelayTicks > 0)
             {
-                float flightDist = caster.Position.DistanceTo(dest);
+                BF_CompAbilityEffect_DelayedJump delayed = ability?.CompOfType<BF_CompAbilityEffect_DelayedJump>();
+                if (delayed != null)
+                {
+                    delayed.Schedule(dest, currentTarget, ChargeDelayTicks);
+                    Debug.Log($"[BF_Charge] Delayed jump scheduled in {ChargeDelayTicks} ticks to {dest}");
+                    return true;
+                }
+                Debug.LogWarning("[BF_Charge] delayTicks > 0 but no BF_CompProperties_DelayedJump comp on the ability; jumping immediately");
+            }
+
+            DoChargeJump(dest, currentTarget);
+            return true;
+        }
+
+        public void DoChargeJump(IntVec3 dest, LocalTargetInfo target)
+        {
+            if (CasterPawn == null || !CasterPawn.Spawned || CasterPawn.Map == null)
+            {
+                Debug.LogWarning($"[BF_Charge] DoChargeJump skipped: caster not on map");
+                return;
+            }
+
+            if (ChargeProps?.stunTargetDuringCharge == true && target.Thing is Pawn targetPawn)
+            {
+                float flightDist = CasterPawn.Position.DistanceTo(dest);
                 ThingDef flyerDef = ChargeFlyer;
                 float flightSpeed = (flyerDef?.pawnFlyer?.flightSpeed).GetValueOrDefault(12f);
                 float flightDurationMin = (flyerDef?.pawnFlyer?.flightDurationMin).GetValueOrDefault(0.5f);
@@ -62,13 +96,13 @@ namespace BF_Library
             }
 
             Debug.Log($"[BF_Charge] Starting jump to {dest}");
-            return JumpUtility.DoJump(
+            JumpUtility.DoJump(
                 CasterPawn,
                 new LocalTargetInfo(dest),
                 base.ReloadableCompSource,
                 verbProps,
                 ability,
-                currentTarget,
+                target,
                 ChargeFlyer);
         }
 
