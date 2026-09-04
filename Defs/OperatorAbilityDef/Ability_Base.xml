@@ -21,6 +21,45 @@
 		</pawnFlyer>
 	</ThingDef>
 
+	<ThingDef ParentName="PawnFlyerBase">
+		<defName>EF_Lift</defName>
+		<pawnFlyer>
+			<flightSpeed>1000</flightSpeed>
+			<flightDurationMin>0.1</flightDurationMin>
+			<heightFactor>4.5</heightFactor>
+			<stunDurationTicksRange>0~0</stunDurationTicksRange>
+		</pawnFlyer>
+	</ThingDef>
+
+	<!-- 冲刺 -->
+	<AbilityDef>
+		<defName>EF_Ability_Dash</defName>
+		<label>Dash</label>
+		<description>Dash.</description>
+		<iconPath>UI/Abilities/Dash</iconPath>
+		<cooldownTicksRange>60</cooldownTicksRange>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties Class="BF_Library.BF_VerbProperties_Charge">
+			<verbClass>BF_Library.BF_Verb_Charge</verbClass>
+			<range>2.9</range>
+			<minRange>0.9</minRange>
+			<warmupTime>0.1</warmupTime>
+			<chargeToTarget>true</chargeToTarget>
+			<drawAimPie>true</drawAimPie>
+			<chargeFlyerDef>EF_Dash</chargeFlyerDef>
+			<stunTargetDuringCharge>false</stunTargetDuringCharge>
+			<targetParams>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="BF_Library.BF_CompProperties_ActivateOnLanding"/>
+		</comps>
+	</AbilityDef>
+
 	<!-- Endfield 专用 operatorID（容器技能） -->
 	<AbilityDef>
 		<defName>EF_VAbility_Operator</defName>
@@ -43,4 +82,38 @@
 		</verbProperties>
 	</AbilityDef>
 
+	<!-- 破防 -->
+	<HediffDef>
+		<defName>EF_Hediff_Vulnerable</defName>
+		<label>vulnerable</label>
+		<hediffClass>HediffWithComps</hediffClass>
+		<description>Vulnerable can be consumed for further damage.</description>
+		<lethalSeverity>-1</lethalSeverity>
+		<maxSeverity>1</maxSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<stages>
+			<li>
+				<label>stack 1</label>
+				<minSeverity>0.01</minSeverity>
+			</li>
+			<li>
+				<label>stack2</label>
+				<minSeverity>0.26</minSeverity>
+			</li>
+			<li>
+				<label>stack 3</label>
+				<minSeverity>0.51</minSeverity>
+			</li>
+			<li>
+				<label>stack4</label>
+				<minSeverity>0.76</minSeverity>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>1800</disappearsAfterTicks>
+			</li>
+		</comps>
+	</HediffDef>
+	
 </Defs>

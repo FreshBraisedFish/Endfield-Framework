@@ -87,7 +87,7 @@
 		</comps>
 		<graphicData>
 			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
-			<texPath>Things/AK_Agents/Weapon/Guard/LapplandW</texPath>
+			<texPath>Things/UI/Element/Guard</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Industrial</techLevel>
@@ -131,9 +131,36 @@
 		</statBases>
 	</ThingDef>
 
-	<!-- ========== 法术武器基底（继承远程） ========== -->
+	<!-- ========== 武器基底 ========== -->
 
-	<ThingDef Name="EF_WeaponBase_Magic" ParentName="EF_WeaponBase_Ranged" Abstract="True">
+	<ThingDef Name="EF_WeaponBase_Sword" ParentName="EF_WeaponBase_Melee" Abstract="True">
+		<thingCategories Inherit="False">
+			<li>EF_Weapon_Sword</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Name="EF_WeaponBase_GreatSword" ParentName="EF_WeaponBase_Melee" Abstract="True">
+		<thingCategories Inherit="False">
+			<li>EF_Weapon_GreatSword</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Name="EF_WeaponBase_Polearm" ParentName="EF_WeaponBase_Melee" Abstract="True">
+		<thingCategories Inherit="False">
+			<li>EF_Weapon_Polearm</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Name="EF_WeaponBase_Handcannon" ParentName="EF_WeaponBase_Ranged" Abstract="True">
+		<thingCategories Inherit="False">
+			<li>EF_Weapon_Handcannon</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Name="EF_WeaponBase_ArtsUnit" ParentName="EF_WeaponBase_Ranged" Abstract="True">
+		<thingCategories Inherit="False">
+			<li>EF_Weapon_ArtsUnit</li>
+		</thingCategories>
 	</ThingDef>
 
 	<!-- ========== 投射物基底 ========== -->
