@@ -20,6 +20,9 @@ namespace BF_Library
         public ProjectileSpawnPosition spawnPosition;
         public Vector3 spawnOffset;
         public float spreadRadius;
+        public DamageDef damageDefOverride;
+        public int damageAmountOverride = -1;
+        public float damageMultiplier = 1f;
 
         public BF_CompProperties_DelayedHits()
         {
@@ -125,8 +128,13 @@ namespace BF_Library
                 return;
             }
             Debug.Log($"[BF_DelayedHits] FireHit: projectile={projectileDef.defName}, spawn={Props.spawnPosition}({spawnCell}), target={pendingTarget}, remaining={hitsRemaining}");
-            Projectile projectile = (Projectile)GenSpawn.Spawn(
-                projectileDef, spawnCell, map);
+            Projectile projectile = BF_ProjectileUtility.Spawn(
+                projectileDef, spawnCell, map,
+                Props.damageDefOverride, Props.damageAmountOverride, Props.damageMultiplier);
+            if (projectile == null)
+            {
+                return;
+            }
             projectile.Launch(
                 pawn, spawnPos,
                 pendingTarget, pendingTarget,

@@ -5,15 +5,15 @@ using Verse.AI;
 
 namespace BF_Library
 {
-    public enum BF_JumpDestination
+    public enum BF_LiftDestination
     {
         Caster,
         Target
     }
 
-    public class BF_CompProperties_ForceJump : CompProperties_AbilityEffect
+    public class BF_CompProperties_Lift : CompProperties_AbilityEffect
     {
-        public BF_JumpDestination destination = BF_JumpDestination.Caster;
+        public BF_LiftDestination destination = BF_LiftDestination.Caster;
         public float offsetRadius;
         public ThingDef pawnFlyerDef;
         public bool stunDuringFlight = true;
@@ -21,15 +21,15 @@ namespace BF_Library
         public bool endCurrentJob;
         public int delayTicks;
 
-        public BF_CompProperties_ForceJump()
+        public BF_CompProperties_Lift()
         {
-            compClass = typeof(BF_CompAbilityEffect_ForceJump);
+            compClass = typeof(BF_CompAbilityEffect_Lift);
         }
     }
 
-    public class BF_CompAbilityEffect_ForceJump : CompAbilityEffect
+    public class BF_CompAbilityEffect_Lift : CompAbilityEffect
     {
-        public new BF_CompProperties_ForceJump Props => (BF_CompProperties_ForceJump)props;
+        public new BF_CompProperties_Lift Props => (BF_CompProperties_Lift)props;
 
         private bool pending;
         private int ticksLeft;
@@ -51,7 +51,7 @@ namespace BF_Library
             Pawn targetPawn = target.Pawn;
             if (targetPawn == null || !targetPawn.Spawned || targetPawn.Map == null)
             {
-                Debug.LogWarning($"[BF_ForceJump] No valid target pawn, skipping");
+                Debug.LogWarning($"[BF_Lift] No valid target pawn, skipping");
                 return;
             }
 
@@ -60,7 +60,7 @@ namespace BF_Library
                 pendingTarget = target;
                 ticksLeft = Props.delayTicks;
                 pending = true;
-                Debug.Log($"[BF_ForceJump] Scheduled jump for {targetPawn.LabelShort} in {Props.delayTicks} ticks");
+                Debug.Log($"[BF_Lift] Scheduled lift for {targetPawn.LabelShort} in {Props.delayTicks} ticks");
                 return;
             }
 
@@ -82,7 +82,7 @@ namespace BF_Library
             Pawn targetPawn = pendingTarget.Pawn;
             if (targetPawn == null || !targetPawn.Spawned || targetPawn.Map == null)
             {
-                Debug.LogWarning($"[BF_ForceJump] Delayed jump skipped: target no longer valid");
+                Debug.LogWarning($"[BF_Lift] Delayed lift skipped: target no longer valid");
                 return;
             }
             DoJump(targetPawn);
@@ -98,14 +98,14 @@ namespace BF_Library
 
         private void DoJump(Pawn targetPawn)
         {
-            IntVec3 baseCell = Props.destination == BF_JumpDestination.Caster
+            IntVec3 baseCell = Props.destination == BF_LiftDestination.Caster
                 ? parent.pawn.Position
                 : targetPawn.Position;
             IntVec3 jumpCell = ResolveJumpCell(targetPawn, baseCell);
 
             if (Props.endCurrentJob && targetPawn.CurJob != null)
             {
-                Debug.Log($"[BF_ForceJump] Ending {targetPawn.LabelShort}'s job {targetPawn.CurJob.def.defName}");
+                Debug.Log($"[BF_Lift] Ending {targetPawn.LabelShort}'s job {targetPawn.CurJob.def.defName}");
                 targetPawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
             }
 
@@ -113,7 +113,7 @@ namespace BF_Library
 
             VerbProperties verbProps = parent.verb?.verbProps ?? new VerbProperties();
             bool success = JumpUtility.DoJump(targetPawn, new LocalTargetInfo(jumpCell), null, verbProps, null, LocalTargetInfo.Invalid, Props.pawnFlyerDef);
-            Debug.Log($"[BF_ForceJump] {targetPawn.LabelShort} jumped to {jumpCell} (base={baseCell}, success={success})");
+            Debug.Log($"[BF_Lift] {targetPawn.LabelShort} lifted to {jumpCell} (base={baseCell}, success={success})");
         }
 
         private IntVec3 ResolveJumpCell(Pawn targetPawn, IntVec3 baseCell)
@@ -173,7 +173,7 @@ namespace BF_Library
                 return;
             }
             targetPawn.stances.stunner.StunFor(stunTicks, parent.pawn, addBattleLog: true, showMote: true);
-            Debug.Log($"[BF_ForceJump] Stunned {targetPawn.LabelShort} for {stunTicks} ticks (flight={flightTime:F2}s)");
+            Debug.Log($"[BF_Lift] Stunned {targetPawn.LabelShort} for {stunTicks} ticks (flight={flightTime:F2}s)");
         }
     }
 }

@@ -40,15 +40,12 @@
 		<cooldownTicksRange>60</cooldownTicksRange>
 		<hostile>false</hostile>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-		<verbProperties Class="BF_Library.BF_VerbProperties_Charge">
-			<verbClass>BF_Library.BF_Verb_Charge</verbClass>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
 			<range>2.9</range>
 			<minRange>0.9</minRange>
 			<warmupTime>0.1</warmupTime>
-			<chargeToTarget>true</chargeToTarget>
 			<drawAimPie>true</drawAimPie>
-			<chargeFlyerDef>EF_Dash</chargeFlyerDef>
-			<stunTargetDuringCharge>false</stunTargetDuringCharge>
 			<targetParams>
 			<canTargetLocations>true</canTargetLocations>
 			<canTargetPawns>false</canTargetPawns>
@@ -56,7 +53,11 @@
 			</targetParams>
 		</verbProperties>
 		<comps>
-			<li Class="BF_Library.BF_CompProperties_ActivateOnLanding"/>
+			<li Class="BF_Library.BF_CompProperties_Charge">
+				<chargeToTarget>true</chargeToTarget>
+				<chargeFlyerDef>EF_Dash</chargeFlyerDef>
+				<stunTargetDuringCharge>false</stunTargetDuringCharge>
+			</li>
 		</comps>
 	</AbilityDef>
 
