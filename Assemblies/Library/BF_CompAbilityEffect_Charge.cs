@@ -37,6 +37,9 @@ namespace BF_Library
         private IntVec3 destCell;
         private LocalTargetInfo chargeTarget;
         private int chargesRemaining;
+        // 仅用于安全序列化，见 BF_TargetInfoScribe
+        private IntVec3 chargeTargetCell = IntVec3.Invalid;
+        private Thing chargeTargetThing;
 
         private ThingDef ChargeFlyer => Props.chargeFlyerDef ?? ThingDefOf.PawnFlyer;
 
@@ -97,6 +100,7 @@ namespace BF_Library
         {
             if (chargesRemaining <= 0)
             {
+                chargeTarget = LocalTargetInfo.Invalid;
                 return;
             }
             chargesRemaining--;
@@ -167,6 +171,15 @@ namespace BF_Library
             if (Props.postChargeStunTicks > 0)
             {
                 pawn.stances.stunner.StunFor(Props.postChargeStunTicks, pawn, addBattleLog: true, showMote: true);
+            }
+            ClearTargetIfDone();
+        }
+
+        private void ClearTargetIfDone()
+        {
+            if (chargesRemaining <= 0)
+            {
+                chargeTarget = LocalTargetInfo.Invalid;
             }
         }
 
@@ -275,8 +288,8 @@ namespace BF_Library
             Scribe_Values.Look(ref pending, "pending");
             Scribe_Values.Look(ref ticksLeft, "ticksLeft");
             Scribe_Values.Look(ref destCell, "destCell");
-            Scribe_TargetInfo.Look(ref chargeTarget, "chargeTarget");
             Scribe_Values.Look(ref chargesRemaining, "chargesRemaining");
+            BF_TargetInfoScribe.Look(ref chargeTarget, ref chargeTargetCell, ref chargeTargetThing, "chargeTarget");
         }
     }
 }

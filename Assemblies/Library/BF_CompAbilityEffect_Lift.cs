@@ -34,6 +34,9 @@ namespace BF_Library
         private bool pending;
         private int ticksLeft;
         private LocalTargetInfo pendingTarget;
+        // 仅用于安全序列化，见 BF_TargetInfoScribe
+        private IntVec3 pendingTargetCell = IntVec3.Invalid;
+        private Thing pendingTargetThing;
 
         public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
         {
@@ -83,9 +86,11 @@ namespace BF_Library
             if (targetPawn == null || !targetPawn.Spawned || targetPawn.Map == null)
             {
                 Debug.LogWarning($"[BF_Lift] Delayed lift skipped: target no longer valid");
+                pendingTarget = LocalTargetInfo.Invalid;
                 return;
             }
             DoJump(targetPawn);
+            pendingTarget = LocalTargetInfo.Invalid;
         }
 
         public override void PostExposeData()
@@ -93,7 +98,7 @@ namespace BF_Library
             base.PostExposeData();
             Scribe_Values.Look(ref pending, "pending");
             Scribe_Values.Look(ref ticksLeft, "ticksLeft");
-            Scribe_TargetInfo.Look(ref pendingTarget, "pendingTarget");
+            BF_TargetInfoScribe.Look(ref pendingTarget, ref pendingTargetCell, ref pendingTargetThing, "pendingTarget");
         }
 
         private void DoJump(Pawn targetPawn)

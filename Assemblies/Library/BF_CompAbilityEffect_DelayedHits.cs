@@ -59,6 +59,9 @@ namespace BF_Library
         private int hitsRemaining;
         private int tickBetweenHits;
         private LocalTargetInfo pendingTarget;
+        // 仅用于安全序列化，见 BF_TargetInfoScribe
+        private IntVec3 pendingTargetCell = IntVec3.Invalid;
+        private Thing pendingTargetThing;
 
         public new BF_CompProperties_DelayedHits Props => (BF_CompProperties_DelayedHits)props;
 
@@ -76,6 +79,7 @@ namespace BF_Library
                 FireHit();
                 hitsRemaining--;
                 ticksLeft = tickBetweenHits;
+                ClearTargetIfDone();
             }
         }
 
@@ -93,6 +97,15 @@ namespace BF_Library
             FireHit();
             hitsRemaining--;
             ticksLeft = tickBetweenHits;
+            ClearTargetIfDone();
+        }
+
+        private void ClearTargetIfDone()
+        {
+            if (hitsRemaining <= 0)
+            {
+                pendingTarget = LocalTargetInfo.Invalid;
+            }
         }
 
         private void FireHit()
@@ -148,7 +161,7 @@ namespace BF_Library
             Scribe_Values.Look(ref ticksLeft, "ticksLeft");
             Scribe_Values.Look(ref hitsRemaining, "hitsRemaining");
             Scribe_Values.Look(ref tickBetweenHits, "tickBetweenHits");
-            Scribe_TargetInfo.Look(ref pendingTarget, "pendingTarget");
+            BF_TargetInfoScribe.Look(ref pendingTarget, ref pendingTargetCell, ref pendingTargetThing, "pendingTarget");
         }
     }
 }
