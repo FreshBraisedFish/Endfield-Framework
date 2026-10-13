@@ -49,7 +49,6 @@
 			</bodyPartGroups>
 			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</wornGraphicPath>
 			<layers>
-				<li>OnSkin</li>
 				<li>Middle</li>
 				<li>Shell</li>
 			</layers>

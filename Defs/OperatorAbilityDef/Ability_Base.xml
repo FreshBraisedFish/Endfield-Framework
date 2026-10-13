@@ -44,7 +44,7 @@
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>2.9</range>
 			<minRange>0.9</minRange>
-			<warmupTime>0.1</warmupTime>
+			<warmupTime>0.01</warmupTime>
 			<drawAimPie>true</drawAimPie>
 			<targetParams>
 			<canTargetLocations>true</canTargetLocations>
@@ -61,6 +61,36 @@
 		</comps>
 	</AbilityDef>
 
+	<!-- 光环 -->
+	 <AbilityDef Abstract="True" Name="EF_AuraBuffBase">
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <stunTargetWhileCasting>False</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration>
+      <Ability_EffectRadius>9.9</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0.5</warmupTime>
+      <range>9.9</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
 	<!-- Endfield 专用 operatorID（容器技能） -->
 	<AbilityDef>
 		<defName>EF_VAbility_Operator</defName>
@@ -82,6 +112,28 @@
 			</targetParams>
 		</verbProperties>
 	</AbilityDef>
+
+	<!-- 再生 -->
+	<HediffDef>
+		<defName>EF_Ability_Heal</defName>
+		<label>Heal</label>
+		<description>Heal.</description>
+		<lethalSeverity>-1</lethalSeverity>
+		<maxSeverity>1</maxSeverity>
+		<alwaysShowSeverity>false</alwaysShowSeverity>
+		<hediffClass>HediffWithComps</hediffClass>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<stages>
+			<li>
+				<regeneration>30000</regeneration>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>600</disappearsAfterTicks>
+			</li>
+		</comps>
+	</HediffDef>
 
 	<!-- 破防 -->
 	<HediffDef>
