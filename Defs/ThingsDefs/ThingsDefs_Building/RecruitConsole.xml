@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- 干员招募终端：选中后打开招募界面，按 OperatorDef 生成固定干员 -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>EF_RecruitConsole</defName>
+		<label>operator recruitment console</label>
+		<description>接入终末地人事数据库的终端。可以从已登记的干员模板中招募一名干员加入殖民地。</description>
+		<thingClass>Endfield.Building_RecruitConsole</thingClass>
+
+		<graphicData>
+			<texPath>Things/Building/EF_RecruitConsole</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+
+		<size>(2,2)</size>
+		<rotatable>false</rotatable>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.5</fillPercent>
+		<castEdgeShadows>true</castEdgeShadows>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Misc</designationCategory>
+
+		<costList>
+			<Steel>75</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+
+		<statBases>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Mass>25</Mass>
+			<WorkToBuild>3000</WorkToBuild>
+			<Flammability>0.3</Flammability>
+		</statBases>
+
+		<uiIconPath>UI/Element/Endfield</uiIconPath>
+
+		<!-- 招募参数：改这里就能调消耗与冷却 -->
+		<modExtensions>
+			<li Class="Endfield.RecruitConsoleExtension">
+				<silverCost>0</silverCost>
+				<cooldownTicks>600</cooldownTicks>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+</Defs>

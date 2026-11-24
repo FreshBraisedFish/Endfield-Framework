@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Guard -->
+  <EF_OperatorClass_Guard.label>近卫</EF_OperatorClass_Guard.label>
+  <!-- EN: Defender -->
+  <EF_OperatorClass_Defender.label>重装</EF_OperatorClass_Defender.label>
+  <!-- EN: Supporter -->
+  <EF_OperatorClass_Supporter.label>辅助</EF_OperatorClass_Supporter.label>
+  <!-- EN: Vanguard -->
+  <EF_OperatorClass_Vanguard.label>先锋</EF_OperatorClass_Vanguard.label>
+  <!-- EN: Striker -->
+  <EF_OperatorClass_Striker.label>突击</EF_OperatorClass_Striker.label>
+  <!-- EN: Caster -->
+  <EF_OperatorClass_Caster.label>术士</EF_OperatorClass_Caster.label>
+</LanguageData>

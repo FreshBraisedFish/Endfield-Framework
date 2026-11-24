@@ -4,4 +4,6 @@
 	<EF_VAbility_Operator.label>干员协议</EF_VAbility_Operator.label>
 	<!-- EN: Endfield operator protocol. -->
 	<EF_VAbility_Operator.description>终末地干员协议。</EF_VAbility_Operator.description>
+	<EF_Ability_Dash.label>冲刺</EF_Ability_Dash.label>
+	<EF_Ability_Dash.description>冲刺。</EF_Ability_Dash.description>
 </Defs>

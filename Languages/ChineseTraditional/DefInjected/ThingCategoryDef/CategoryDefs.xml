@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Endfield weapons -->
+  <EF_Weapon.label>终末地系列武器</EF_Weapon.label>
+  <!-- EN: guard weapons -->
+  <EF_Weapon_Guard.label>近卫武器</EF_Weapon_Guard.label>
+  <!-- EN: defender weapons -->
+  <EF_Weapon_Defender.label>重装武器</EF_Weapon_Defender.label>
+  <!-- EN: supporter weapons -->
+  <EF_Weapon_Supporter.label>辅助武器</EF_Weapon_Supporter.label>
+  <!-- EN: vanguard weapons -->
+  <EF_Weapon_Vanguard.label>先锋武器</EF_Weapon_Vanguard.label>
+  <!-- EN: striker weapons -->
+  <EF_Weapon_Striker.label>突击武器</EF_Weapon_Striker.label>
+  <!-- EN: caster weapons -->
+  <EF_Weapon_Caster.label>术士武器</EF_Weapon_Caster.label>
+  <!-- EN: Endfield apparels -->
+  <EF_Apparel.label>终末地系列衣着</EF_Apparel.label>
+  <!-- EN: guard apparels -->
+  <EF_Apparel_Guard.label>近卫衣着</EF_Apparel_Guard.label>
+  <!-- EN: defender apparels -->
+  <EF_Apparel_Defender.label>重装衣着</EF_Apparel_Defender.label>
+  <!-- EN: supporter apparels -->
+  <EF_Apparel_Supporter.label>辅助衣着</EF_Apparel_Supporter.label>
+  <!-- EN: vanguard apparels -->
+  <EF_Apparel_Vanguard.label>先锋衣着</EF_Apparel_Vanguard.label>
+  <!-- EN: striker apparels -->
+  <EF_Apparel_Striker.label>突击衣着</EF_Apparel_Striker.label>
+  <!-- EN: caster apparels -->
+  <EF_Apparel_Caster.label>术士衣着</EF_Apparel_Caster.label>
+  <!-- EN: accessory -->
+  <EF_Apparel_Accessory.label>饰品</EF_Apparel_Accessory.label>
+  <!-- EN: Endfield buildings -->
+  <EF_Building.label>终末地建筑</EF_Building.label>
+  <!-- EN: Endfield items -->
+  <EF_Item.label>终末地杂项物品</EF_Item.label>
+</LanguageData>

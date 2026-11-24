@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <EF_RecruitGizmo_Label>Recruit operator</EF_RecruitGizmo_Label>
+  <EF_RecruitGizmo_Desc>Open the operator list and generate a fixed character from a template.
+
+Cost: {0}
+Silver available: {1}</EF_RecruitGizmo_Desc>
+
+  <EF_Cost_Free>free</EF_Cost_Free>
+  <EF_Cost_Silver>{0} silver</EF_Cost_Silver>
+
+  <EF_Reason_NoMap>Not on any map</EF_Reason_NoMap>
+  <EF_Reason_Cooldown>On cooldown: {0}</EF_Reason_Cooldown>
+  <EF_Reason_NotEnoughSilver>Not enough silver (requires {0})</EF_Reason_NotEnoughSilver>
+  <EF_Reason_InvalidDef>Invalid operator template</EF_Reason_InvalidDef>
+
+  <EF_Message_Recruited>{0} joined the colony.</EF_Message_Recruited>
+  <EF_Message_RecruitFailed>Recruitment failed. Check the log.</EF_Message_RecruitFailed>
+  <EF_Message_NoDefs>No operator definitions found. Check the XML under Defs/OperatorDef/.</EF_Message_NoDefs>
+
+  <EF_Window_Title>Operator Recruitment</EF_Window_Title>
+  <EF_Subtitle_Cooldown> · cooldown {0}</EF_Subtitle_Cooldown>
+  <EF_Subtitle_Remaining> · {0} left</EF_Subtitle_Remaining>
+
+  <EF_Section_Skills>Skills</EF_Section_Skills>
+  <EF_Section_Traits>Traits</EF_Section_Traits>
+  <EF_NotDefined>(none)</EF_NotDefined>
+
+  <EF_Button_Recruit>Recruit</EF_Button_Recruit>
+  <EF_Gender_Male>male</EF_Gender_Male>
+  <EF_Gender_Female>female</EF_Gender_Female>
+  <EF_Age>{0} years old</EF_Age>
+
+</LanguageData>

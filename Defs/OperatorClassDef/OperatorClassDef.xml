@@ -1,78 +1,62 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
 	<!-- ============================================================
 		 [BF] - Endfield 干员系列 & 职业定义
-		 
-		 OperatorSeriesDef — 阵营系列（如：终末地、阵营系列等）
-		 OperatorClassDef — 职业分类（决定立绘文件夹、图标、排序等）
-		 ============================================================ -->
+		 OperatorSeriesDef — 阵营 / 作品系列
+		 OperatorClassDef — 职业分类（招募界面按 sortingOrder 排序，并显示 iconPath 图标）
+	============================================================ -->
 
-	<!-- 系列：终末地 -->
-	<AK_DLL.OperatorSeriesDef>
+	<Endfield.OperatorSeriesDef>
 		<defName>EF_Series_Endfield</defName>
-		<!--<label>终末地</label> -->
 		<label>Endfield</label>
-		<icon>UI/Element/Endfield</icon>
-	</AK_DLL.OperatorSeriesDef>
+		<iconPath>UI/Element/Endfield</iconPath>
+	</Endfield.OperatorSeriesDef>
 
-	<!-- 职业基类 -->
-	<AK_DLL.OperatorClassDef Name="EF_OpClassBase" Abstract="True">
+	<Endfield.OperatorClassDef Name="EF_OpClassBase" Abstract="True">
 		<series>EF_Series_Endfield</series>
-	</AK_DLL.OperatorClassDef>
+	</Endfield.OperatorClassDef>
 
-	<!-- 近卫 Guard -->
-	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
+	<Endfield.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Guard</defName>
 		<label>Guard</label>
 		<sortingOrder>500</sortingOrder>
-		<textureFolder>Guard</textureFolder>
 		<iconPath>UI/Element/Guard</iconPath>
-	</AK_DLL.OperatorClassDef>
+	</Endfield.OperatorClassDef>
 
-	<!-- 重装 Defender -->
-	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
+	<Endfield.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Defender</defName>
 		<label>Defender</label>
 		<sortingOrder>11</sortingOrder>
-		<textureFolder>Defender</textureFolder>
 		<iconPath>UI/Element/Defender</iconPath>
-	</AK_DLL.OperatorClassDef>
+	</Endfield.OperatorClassDef>
 
-	<!-- 辅助 Supporter -->
-	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
+	<Endfield.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Supporter</defName>
 		<label>Supporter</label>
 		<sortingOrder>12</sortingOrder>
-		<textureFolder>Supporter</textureFolder>
 		<iconPath>UI/Element/Supporter</iconPath>
-	</AK_DLL.OperatorClassDef>
+	</Endfield.OperatorClassDef>
 
-	<!-- 先锋 Vanguard -->
-	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
+	<Endfield.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Vanguard</defName>
 		<label>Vanguard</label>
 		<sortingOrder>13</sortingOrder>
-		<textureFolder>Vanguard</textureFolder>
 		<iconPath>UI/Element/Vanguard</iconPath>
-	</AK_DLL.OperatorClassDef>
+	</Endfield.OperatorClassDef>
 
-	<!-- 突击 Striker -->
-	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
+	<Endfield.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Striker</defName>
 		<label>Striker</label>
 		<sortingOrder>14</sortingOrder>
-		<textureFolder>Striker</textureFolder>
 		<iconPath>UI/Element/Striker</iconPath>
-	</AK_DLL.OperatorClassDef>
+	</Endfield.OperatorClassDef>
 
-	<!-- 术士 Caster -->
-	<AK_DLL.OperatorClassDef ParentName="EF_OpClassBase">
+	<Endfield.OperatorClassDef ParentName="EF_OpClassBase">
 		<defName>EF_OperatorClass_Caster</defName>
 		<label>Caster</label>
 		<sortingOrder>15</sortingOrder>
-		<textureFolder>Caster</textureFolder>
 		<iconPath>UI/Element/Caster</iconPath>
-	</AK_DLL.OperatorClassDef>
+	</Endfield.OperatorClassDef>
 
 </Defs>

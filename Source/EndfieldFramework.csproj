@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    [BF] - Endfield Framework  \  EndfieldFramework
+    目标框架 net10.0：RimWorld 1.7 起使用 Waylith CLR（.NET 10）与自研 Brutal 引擎，
+    UnityEngine.* 的引用在运行时被重定向到 UnityStubs.dll，因此编译期直接引用 UnityStubs.dll。
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>EndfieldFramework</AssemblyName>
+    <RootNamespace>Endfield</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DebugType>none</DebugType>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <NoWarn>CS0649;CS0169;CS0414;CS8632</NoWarn>
+    <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+    <RimWorldDir>E:\SteamLibrary\steamapps\common\RimWorld</RimWorldDir>
+    <HarmonyDir>E:\SteamLibrary\steamapps\workshop\content\294100\2009463077\1.7\Assemblies</HarmonyDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldDir)\UnityStubs.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(HarmonyDir)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="obj\**;bin\**" />
+  </ItemGroup>
+
+</Project>

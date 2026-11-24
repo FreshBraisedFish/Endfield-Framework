@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: magic shot -->
+  <EF_Injury_MagicShot.label>法术射弹</EF_Injury_MagicShot.label>
+  <!-- EN: wounds caused by magical shots. -->
+  <EF_Injury_MagicShot.labelNoun>法术射击造成的伤口</EF_Injury_MagicShot.labelNoun>
+  <!-- EN: a wound caused by magical shots. -->
+  <EF_Injury_MagicShot.description>由法术射击造成的伤口。</EF_Injury_MagicShot.description>
+  <!-- EN: bandaged -->
+  <EF_Injury_MagicShot.comps.0.labelTendedWell>已包扎</EF_Injury_MagicShot.comps.0.labelTendedWell>
+  <!-- EN: stitched -->
+  <EF_Injury_MagicShot.comps.0.labelTendedWellInner>已缝合</EF_Injury_MagicShot.comps.0.labelTendedWellInner>
+  <!-- EN: treated -->
+  <EF_Injury_MagicShot.comps.0.labelSolidTendedWell>已处理</EF_Injury_MagicShot.comps.0.labelSolidTendedWell>
+  <!-- EN: old magic wound -->
+  <EF_Injury_MagicShot.comps.2.permanentLabel>旧法术伤口</EF_Injury_MagicShot.comps.2.permanentLabel>
+  <!-- EN: permanent magic wound -->
+  <EF_Injury_MagicShot.comps.2.instantlyPermanentLabel>永久法术旧伤</EF_Injury_MagicShot.comps.2.instantlyPermanentLabel>
+  <!-- EN: shot off -->
+  <EF_Injury_MagicShot.injuryProps.destroyedLabel>射掉</EF_Injury_MagicShot.injuryProps.destroyedLabel>
+  <!-- EN: shot off -->
+  <EF_Injury_MagicShot.injuryProps.destroyedOutLabel>射掉</EF_Injury_MagicShot.injuryProps.destroyedOutLabel>
+</LanguageData>

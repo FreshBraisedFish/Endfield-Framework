@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Guard -->
+  <EF_Trait_Agent_Guard.degreeDatas.0.label>近卫干员</EF_Trait_Agent_Guard.degreeDatas.0.label>
+  <!-- EN: {PAWN_nameDef} is skilled at making enemies Vulnerable and applying Physical Statuses. {PAWN_pronoun} is also good damage dealers. -->
+  <EF_Trait_Agent_Guard.degreeDatas.0.description>{PAWN_nameDef}擅长对敌人施加破防并施加物理状态。{PAWN_pronoun}也是出色的输出手。</EF_Trait_Agent_Guard.degreeDatas.0.description>
+
+  <!-- EN: Defender -->
+  <EF_Trait_Agent_Defender.degreeDatas.0.label>重装干员</EF_Trait_Agent_Defender.degreeDatas.0.label>
+  <!-- EN: {PAWN_nameDef} is extremely tough. {PAWN_pronoun} is skilled in protecting and treating {PAWN_possessive} teammates, as well as counterattacking the enemy. -->
+  <EF_Trait_Agent_Defender.degreeDatas.0.description>{PAWN_nameDef}极其坚韧。{PAWN_pronoun}擅长保护和治疗{PAWN_possessive}队友，并能够反击敌人。</EF_Trait_Agent_Defender.degreeDatas.0.description>
+
+  <!-- EN: Supporter -->
+  <EF_Trait_Agent_Supporter.degreeDatas.0.label>辅助干员</EF_Trait_Agent_Supporter.degreeDatas.0.label>
+  <!-- EN: {PAWN_nameDef} is skilled at applying various control effects that weaken the enemy. {PAWN_pronoun} can also buff and support their teammates. -->
+  <EF_Trait_Agent_Supporter.degreeDatas.0.description>{PAWN_nameDef}擅长施加各种控制效果来削弱敌人。{PAWN_pronoun}也可以增益和支援{PAWN_possessive}队友。</EF_Trait_Agent_Supporter.degreeDatas.0.description>
+
+  <!-- EN: Vanguard -->
+  <EF_Trait_Agent_Vanguard.degreeDatas.0.label>先锋干员</EF_Trait_Agent_Vanguard.degreeDatas.0.label>
+  <!-- EN: {PAWN_nameDef} is great at recovering SP to help {PAWN_possessive} teammates' skill casting. -->
+  <EF_Trait_Agent_Vanguard.degreeDatas.0.description>{PAWN_nameDef}善于恢复SP，帮助{PAWN_possessive}队友释放技能。</EF_Trait_Agent_Vanguard.degreeDatas.0.description>
+
+  <!-- EN: Striker -->
+  <EF_Trait_Agent_Striker.degreeDatas.0.label>突击干员</EF_Trait_Agent_Striker.degreeDatas.0.label>
+  <!-- EN: {PAWN_nameDef} exploits Physical or Arts effects inflicted by other operators to deal decisive damage. -->
+  <EF_Trait_Agent_Striker.degreeDatas.0.description>{PAWN_nameDef}消耗其他干员施加的破防或法术附着，造成大量伤害。</EF_Trait_Agent_Striker.degreeDatas.0.description>
+
+  <!-- EN: Caster -->
+  <EF_Trait_Agent_Caster.degreeDatas.0.label>术士干员</EF_Trait_Agent_Caster.degreeDatas.0.label>
+  <!-- EN: {PAWN_nameDef} is skilled at applying Arts Inflictions and Arts Reactions. {PAWN_pronoun} is also good damage dealers. -->
+  <EF_Trait_Agent_Caster.degreeDatas.0.description>{PAWN_nameDef}擅长施加法术附着和异常状态。{PAWN_pronoun}也是出色的输出手。</EF_Trait_Agent_Caster.degreeDatas.0.description>
+</LanguageData>

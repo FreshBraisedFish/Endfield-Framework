@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- EN: operator protocol -->
+	<EF_VAbility_Operator.label>干员协议</EF_VAbility_Operator.label>
+	<!-- EN: Endfield operator protocol. -->
+	<EF_VAbility_Operator.description>终末地干员协议。</EF_VAbility_Operator.description>
+</Defs>

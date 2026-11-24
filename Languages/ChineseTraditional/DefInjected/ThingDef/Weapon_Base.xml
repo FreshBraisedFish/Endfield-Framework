@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: bullet shot -->
+  <EF_Bullet_Base.label>子弹射击</EF_Bullet_Base.label>
+  <!-- EN: magic shot -->
+  <EF_MagicBullet_Base.label>法术射击</EF_MagicBullet_Base.label>
+  <!-- EN: The operator's usual weapon. -->
+  <EF_WeaponBase.description>此干员的惯用武器。</EF_WeaponBase.description>
+</LanguageData>

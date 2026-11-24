@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ============================================================
+		 示例干员：一份 XML = 一个固定人物。
+		 招募终端里选中后，会按这里的每一条精确复现一个 pawn。
+		 复制这段改成自己的干员即可。
+	============================================================ -->
+
+	<Endfield.OperatorDef ParentName="EF_RecruitBase_Striker">
+
+		<defName>EF_Recruit_Example</defName>
+
+		<name>Bailu</name>
+		<nickname>Example Operator</nickname>
+		<surname>Endfield</surname>
+
+		<description>A template operator, used to verify the recruitment flow.</description>
+
+		<isMale>false</isMale>
+		<age>22</age>
+
+		<bodyTypeDef>Female</bodyTypeDef>
+		<headTypeDef>Female_AverageNormal</headTypeDef>
+
+		<hair>Bob</hair>
+		<hairColor>(0.42, 0.28, 0.20, 1.0)</hairColor>
+		<skinColor>(0.96, 0.87, 0.80, 1.0)</skinColor>
+
+		<apparels>
+			<li>Apparel_BasicShirt</li>
+			<li>Apparel_Pants</li>
+		</apparels>
+
+		<weapon>Gun_BoltActionRifle</weapon>
+
+		<items>
+			<li>
+				<thingDef>MedicineIndustrial</thingDef>
+				<count>2</count>
+			</li>
+		</items>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<level>6</level>
+				<fireLevel>2</fireLevel>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<level>4</level>
+				<fireLevel>1</fireLevel>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<level>5</level>
+				<fireLevel>1</fireLevel>
+			</li>
+		</skills>
+
+		<traits>
+			<li>
+				<def>Kind</def>
+			</li>
+			<li>
+				<def>Tough</def>
+			</li>
+		</traits>
+
+	</Endfield.OperatorDef>
+
+</Defs>

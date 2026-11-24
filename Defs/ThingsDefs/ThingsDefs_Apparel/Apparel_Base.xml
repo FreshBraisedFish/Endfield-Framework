@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
 	<!-- ============================================================
@@ -71,10 +71,7 @@
 		<canLoadIntoCaravan>false</canLoadIntoCaravan>
 		<comps>
 			<li Class="CompProperties_Biocodable"/>
-			<li Class="SFLib.TCP_HideBody">
-				<hideBody>false</hideBody>
-				<hideHead>false</hideHead>
-			</li>
+			<!-- 装 Sized Apparel 时可加回 <li Class="SFLib.TCP_HideBody"> -->
 		</comps>
 		<equippedStatOffsets>
 			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
@@ -138,10 +135,7 @@
 		<canLoadIntoCaravan>false</canLoadIntoCaravan>
 		<comps>
 			<li Class="CompProperties_Biocodable"/>
-			<li Class="SFLib.TCP_HideBody">
-				<hideBody>false</hideBody>
-				<hideHead>false</hideHead>
-			</li>
+			<!-- 装 Sized Apparel 时可加回 <li Class="SFLib.TCP_HideBody"> -->
 		</comps>
 		<equippedStatOffsets>
 			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>

@@ -1,112 +1,69 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
 	<!-- ============================================================
-		 [BF] - Endfield 干员基底定义
-		 每个职业一个抽象 OperatorDef，继承自框架的 AK_RecruitBase，
-		 绑定职业特质(EF_Trait_Agent_XXX)和职业类型(EF_OperatorClass_XXX)。
-		 
-		 最终的具体干员继承这些基底，放在 Defs/OperatorDef/ 下。
+		 [BF] - Endfield 干员基底定义（独立版，不再依赖 MIS / AK_DLL）
+		 每个职业一个抽象 OperatorDef，绑定职业特质与职业分类。
+		 具体干员继承这些基底，写在 Defs/OperatorDef/ 下。
 	============================================================ -->
 
-		<AK_DLL.OperatorDef Name="EF_RecruitBase" Abstract="True">
-		<surname>终末地</surname>
-		<description>拉电线哈哈</description>
+	<Endfield.OperatorDef Name="EF_RecruitBase" Abstract="True">
+		<surname>Endfield</surname>
+		<description>An operator from Endfield.</description>
 		<bodyTypeDef>Thin</bodyTypeDef>
 		<skinColor>(0.9804, 0.902, 0.8235, 1.0)</skinColor>
-		<hairColor>(1,1,1,1)</hairColor>
-		<childHood>AK_BackStory_Unknown_Child</childHood>
-		<age>16</age>
+		<hairColor>(1, 1, 1, 1)</hairColor>
+		<age>18</age>
 		<headTypeDef>Female_AverageNormal</headTypeDef>
-		<standOffsets>
-			<li>
-				<key>0</key>
-				<value>(10,20,0.5)</value>
-			</li>
-			<li>
-				<key>1</key>
-				<value>(10,10,0.5)</value>
-			</li>
-			<li>
-				<key>2</key>
-				<value>(10,10,0.5)</value>
-			</li>
-			<li>
-				<key>3</key>
-				<value>(10,10,0.5)</value>
-			</li>
-			<li>
-				<key>4</key>
-				<value>(10,10,0.5)</value>
-			</li>
-			<li>
-				<key>5</key>
-				<value>(10,10,0.5)</value>
-			</li>
-		</standOffsets>
-		<xenoType>AK_BaseType</xenoType>
-		<operatorID>EF_VAbility_Operator</operatorID>
-		<renderTreeOverride>Humanlike</renderTreeOverride>
-	</AK_DLL.OperatorDef>
+		<xenoType>Baseliner</xenoType>
+	</Endfield.OperatorDef>
 
 	<!-- 近卫 -->
-	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Guard" Abstract="True">
+	<Endfield.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Guard" Abstract="True">
 		<traits>
-			<li>
-				<def>EF_Trait_Agent_Guard</def>
-			</li>
+			<li><def>EF_Trait_Agent_Guard</def></li>
 		</traits>
 		<operatorType>EF_OperatorClass_Guard</operatorType>
-	</AK_DLL.OperatorDef>
+	</Endfield.OperatorDef>
 
 	<!-- 重装 -->
-	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Defender" Abstract="True">
+	<Endfield.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Defender" Abstract="True">
 		<traits>
-			<li>
-				<def>EF_Trait_Agent_Defender</def>
-			</li>
+			<li><def>EF_Trait_Agent_Defender</def></li>
 		</traits>
 		<operatorType>EF_OperatorClass_Defender</operatorType>
-	</AK_DLL.OperatorDef>
+	</Endfield.OperatorDef>
 
 	<!-- 辅助 -->
-	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Supporter" Abstract="True">
+	<Endfield.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Supporter" Abstract="True">
 		<traits>
-			<li>
-				<def>EF_Trait_Agent_Supporter</def>
-			</li>
+			<li><def>EF_Trait_Agent_Supporter</def></li>
 		</traits>
 		<operatorType>EF_OperatorClass_Supporter</operatorType>
-	</AK_DLL.OperatorDef>
+	</Endfield.OperatorDef>
 
 	<!-- 先锋 -->
-	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Vanguard" Abstract="True">
+	<Endfield.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Vanguard" Abstract="True">
 		<traits>
-			<li>
-				<def>EF_Trait_Agent_Vanguard</def>
-			</li>
+			<li><def>EF_Trait_Agent_Vanguard</def></li>
 		</traits>
 		<operatorType>EF_OperatorClass_Vanguard</operatorType>
-	</AK_DLL.OperatorDef>
+	</Endfield.OperatorDef>
 
 	<!-- 突击 -->
-	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Striker" Abstract="True">
+	<Endfield.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Striker" Abstract="True">
 		<traits>
-			<li>
-				<def>EF_Trait_Agent_Striker</def>
-			</li>
+			<li><def>EF_Trait_Agent_Striker</def></li>
 		</traits>
 		<operatorType>EF_OperatorClass_Striker</operatorType>
-	</AK_DLL.OperatorDef>
+	</Endfield.OperatorDef>
 
 	<!-- 术士 -->
-	<AK_DLL.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Caster" Abstract="True">
+	<Endfield.OperatorDef ParentName="EF_RecruitBase" Name="EF_RecruitBase_Caster" Abstract="True">
 		<traits>
-			<li>
-				<def>EF_Trait_Agent_Caster</def>
-			</li>
+			<li><def>EF_Trait_Agent_Caster</def></li>
 		</traits>
 		<operatorType>EF_OperatorClass_Caster</operatorType>
-	</AK_DLL.OperatorDef>
+	</Endfield.OperatorDef>
 
 </Defs>

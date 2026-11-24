@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <EF_RangedDamageFactor.label>遠程傷害</EF_RangedDamageFactor.label>
+  <EF_RangedDamageFactor.description>遠程攻擊（槍械、砲塔、迫擊砲與技能彈丸）造成傷害的倍率。</EF_RangedDamageFactor.description>
+</LanguageData>

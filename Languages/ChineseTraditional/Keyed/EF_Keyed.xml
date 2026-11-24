@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <EF_RecruitGizmo_Label>招募幹員</EF_RecruitGizmo_Label>
+  <EF_RecruitGizmo_Desc>開啟幹員清單，依範本生成一名固定角色。
+
+消耗：{0}
+目前位置銀幣：{1}</EF_RecruitGizmo_Desc>
+
+  <EF_Cost_Free>免費</EF_Cost_Free>
+  <EF_Cost_Silver>{0} 銀幣</EF_Cost_Silver>
+
+  <EF_Reason_NoMap>不在任何地圖上</EF_Reason_NoMap>
+  <EF_Reason_Cooldown>冷卻中：{0}</EF_Reason_Cooldown>
+  <EF_Reason_NotEnoughSilver>銀幣不足（需要 {0}）</EF_Reason_NotEnoughSilver>
+  <EF_Reason_InvalidDef>無效的幹員範本</EF_Reason_InvalidDef>
+
+  <EF_Message_Recruited>{0} 已加入殖民地。</EF_Message_Recruited>
+  <EF_Message_RecruitFailed>招募失敗，請看日誌。</EF_Message_RecruitFailed>
+  <EF_Message_NoDefs>沒有可招募的幹員定義。請檢查 Defs/OperatorDef/ 下的 XML。</EF_Message_NoDefs>
+
+  <EF_Window_Title>幹員招募</EF_Window_Title>
+  <EF_Subtitle_Cooldown>　·　冷卻 {0}</EF_Subtitle_Cooldown>
+  <EF_Subtitle_Remaining>　·　剩餘 {0}</EF_Subtitle_Remaining>
+
+  <EF_Section_Skills>技能</EF_Section_Skills>
+  <EF_Section_Traits>特性</EF_Section_Traits>
+  <EF_NotDefined>（未定義）</EF_NotDefined>
+
+  <EF_Button_Recruit>招 募</EF_Button_Recruit>
+  <EF_Gender_Male>男</EF_Gender_Male>
+  <EF_Gender_Female>女</EF_Gender_Female>
+  <EF_Age>{0} 歲</EF_Age>
+
+</LanguageData>

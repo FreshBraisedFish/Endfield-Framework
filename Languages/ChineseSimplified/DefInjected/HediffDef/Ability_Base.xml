@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<EF_Hediff_Vulnerable.label>破防</EF_Hediff_Vulnerable.label>
+	<EF_Hediff_Vulnerable.description>破防可以被消耗以造成更多伤害。</EF_Hediff_Vulnerable.description>
+	<EF_Hediff_Vulnerable.stages.stack_1.label>一层</EF_Hediff_Vulnerable.stages.stack_1.label>
+	<EF_Hediff_Vulnerable.stages.stack_2.label>两层</EF_Hediff_Vulnerable.stages.stack_2.label>
+	<EF_Hediff_Vulnerable.stages.stack_3.label>三层</EF_Hediff_Vulnerable.stages.stack_3.label>
+	<EF_Hediff_Vulnerable.stages.stack_4.label>四层</EF_Hediff_Vulnerable.stages.stack_4.label>
+</Defs>

@@ -2,10 +2,11 @@
 <LanguageData>
   <!-- EN: Endfield weapons -->
   <EF_Weapon.label>终末地系列武器</EF_Weapon.label>
-  <!-- EN: guard weapons -->
-  <EF_Weapon_Guard.label>近卫武器</EF_Weapon_Guard.label>
-  <!-- EN: defender weapons -->
-  <EF_Weapon_Defender.label>重装武器</EF_Weapon_Defender.label>
+  <EF_Weapon_Sword.label>单手剑</EF_Weapon_Sword.label>
+  <EF_Weapon_GreatSword.label>大剑</EF_Weapon_GreatSword.label>
+  <EF_Weapon_Polearm.label>长柄武器</EF_Weapon_Polearm.label>
+  <EF_Weapon_Handcannon.label>手铳</EF_Weapon_Handcannon.label>
+  <EF_Weapon_ArtsUnit.label>施术单元</EF_Weapon_ArtsUnit.label>
   <!-- EN: supporter weapons -->
   <EF_Weapon_Supporter.label>辅助武器</EF_Weapon_Supporter.label>
   <!-- EN: vanguard weapons -->
@@ -28,6 +29,20 @@
   <EF_Apparel_Striker.label>突击衣着</EF_Apparel_Striker.label>
   <!-- EN: caster apparels -->
   <EF_Apparel_Caster.label>术士衣着</EF_Apparel_Caster.label>
+    <!-- EN: Endfield headgears -->
+  <EF_Headgear.label>终末地系列头饰</EF_Headgear.label>
+  <!-- EN: guard headgears -->
+  <EF_Headgear_Guard.label>近卫头饰</EF_Headgear_Guard.label>
+  <!-- EN: defender headgears -->
+  <EF_Headgear_Defender.label>重装头饰</EF_Headgear_Defender.label>
+  <!-- EN: supporter headgears -->
+  <EF_Headgear_Supporter.label>辅助头饰</EF_Headgear_Supporter.label>
+  <!-- EN: vanguard headgears -->
+  <EF_Headgear_Vanguard.label>先锋头饰</EF_Headgear_Vanguard.label>
+  <!-- EN: striker headgears -->
+  <EF_Headgear_Striker.label>突击头饰</EF_Headgear_Striker.label>
+  <!-- EN: caster headgears -->
+  <EF_Headgear_Caster.label>术士头饰</EF_Headgear_Caster.label>
   <!-- EN: accessory -->
   <EF_Apparel_Accessory.label>饰品</EF_Apparel_Accessory.label>
   <!-- EN: Endfield buildings -->

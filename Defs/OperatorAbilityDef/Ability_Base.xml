@@ -91,28 +91,6 @@
       </targetParams>
     </verbProperties>
   </AbilityDef>
-	<!-- Endfield 专用 operatorID（容器技能） -->
-	<AbilityDef>
-		<defName>EF_VAbility_Operator</defName>
-		<abilityClass>AK_DLL.VAbility_Operator</abilityClass>
-		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
-		<!--<label>干员协议</label> -->
-		<label>operator protocol</label>
-		<!--<description>终末地干员协议。</description> -->
-		<description>Endfield operator protocol.</description>
-		<iconPath>UI/Element/Endfield</iconPath>
-		<verbProperties> <!-- 没用，但没有好像会报错 -->
-			<verbClass>Verb_CastPsycast</verbClass>
-			<range>24.9</range>
-			<requireLineOfSight>True</requireLineOfSight>
-			<warmupTime>1</warmupTime>
-			<targetParams>
-				<canTargetBuildings>False</canTargetBuildings>
-				<canTargetAnimals>False</canTargetAnimals>
-			</targetParams>
-		</verbProperties>
-	</AbilityDef>
-
 	<!-- 再生 -->
 	<HediffDef>
 		<defName>EF_Ability_Heal</defName>
